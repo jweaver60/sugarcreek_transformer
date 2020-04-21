@@ -46,18 +46,18 @@ class OrderTransformService
 
         if address.count == 3
           address_1 = address[0]
-          city = address[1].split(" ").first.gsub(",", "")
-          state = address[1].split(" ")[1]
-          postal_code = address[1].split(" ")[2]
+          city = address[1].split(" ")[0...-2].join(" ").gsub(",", "")
+          state = address[1].split(" ")[-2]
+          postal_code = address[1].split(" ").last
           country_code = address[2]
         end
 
         if address.count == 4
           address_1 = address[0]
           address_2 = address[1]
-          city = address[2].split(" ").first.gsub(",", "")
-          state = address[2].split(" ")[1]
-          postal_code = address[2].split(" ")[2]
+          city = address[2].split(" ")[0...-2].join(" ").gsub(",", "")
+          state = address[2].split(" ")[-2]
+          postal_code = address[2].split(" ").last
           country_code = address[3]
         end
 
@@ -65,9 +65,9 @@ class OrderTransformService
           address_1 = address[0]
           address_2 = address[1]
           address_3 = address[2]
-          city = address[3].split(" ").first.gsub(",", "")
-          state = address[3].split(" ")[1]
-          postal_code = address[3].split(" ")[2]
+          city = address[3].split(" ")[0...-2].join(" ").gsub(",", "")
+          state = address[3].split(" ")[-2]
+          postal_code = address[3].split(" ").last
           country_code = address[4]
         end
 
