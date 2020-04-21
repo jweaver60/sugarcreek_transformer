@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Transform</h1>
+
+  <%= form_with(url: {action: :upload}, multipart: true, local: true) do %>
+    <%= file_field_tag 'csv', accept: 'text/csv' %>
+    <%= submit_tag 'Transform' %>
+  <% end %>
+</div>
