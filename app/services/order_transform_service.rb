@@ -71,7 +71,7 @@ class OrderTransformService
           country_code = address[4]
         end
 
-        csv << [order[0], order[1], order[2], full_name, first_name, last_name, address_1, address_2, address_3, city, state, postal_code, country_code]
+        csv << [order[0], order[1], order[2].to_i, full_name, first_name, last_name, address_1, address_2, address_3, city, state, postal_code, country_code]
       end
     end
 
